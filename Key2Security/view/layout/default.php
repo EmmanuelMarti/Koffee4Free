@@ -25,6 +25,7 @@
 		      	<ul class="nav navbar-nav">
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Blog</a></li>
 			    	<li><a href="<?php echo Router::url('homes/index'); ?>">Accueil</a></li>
+			    	<li><a href="<?php echo Router::url('quizzs/index'); ?>">Quizz</a></li>
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      	<?php if(!$this->Session->isLogged()){ ?>
