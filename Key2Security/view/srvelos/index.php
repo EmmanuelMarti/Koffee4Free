@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>Securité Routière - Vélo</h1>
+	<h1>SecuritÃ© RoutiÃ¨re - VÃ©lo</h1>
 </div>
 
 <div class="blog">
