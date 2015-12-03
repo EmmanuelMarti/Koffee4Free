@@ -25,6 +25,7 @@
 		      	<ul class="nav navbar-nav">
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Blog</a></li>
 			    	<li><a href="<?php echo Router::url('homes/index'); ?>">Accueil</a></li>
+			    	<li><a href="<?php echo Router::url('buttons/index'); ?>">Cours</a></li>
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      	<?php if(!$this->Session->isLogged()){ ?>
@@ -47,5 +48,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="<?php echo Router::webroot('js/hidden.js'); ?>"></script>
 </body>
 </html>
