@@ -17,14 +17,13 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Blog de Stage</a>
+		      <a href=""><img src="<?php echo Router::webroot('img/Logo.png'); ?>"></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Cours</a></li>
-			    	<li><a href="#">Rapport</a></li>
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Blog</a></li>
 			    	<li><a href="<?php echo Router::url('homes/index'); ?>">Accueil</a></li>
 			    	<li><a href="<?php echo Router::url('buttons/index'); ?>">Cours</a></li>
