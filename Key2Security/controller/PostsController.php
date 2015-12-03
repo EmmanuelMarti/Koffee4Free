@@ -4,7 +4,7 @@ class PostsController extends Controller{
 
 	function index(){
 
-		$perPage = 1; 
+		$perPage = 1;
 		$this->loadModel('Post');
 		$conditions = array('type' => 'post', 'online' => 1);
 		$d['posts'] = $this->Post->find(array(
@@ -15,7 +15,7 @@ class PostsController extends Controller{
 		$d['page'] = ceil($d['total'] / $perPage);
 		$this->set($d);
 	}
-	
+
 	function view($id, $slug){
 
 		$this->loadModel('Post');

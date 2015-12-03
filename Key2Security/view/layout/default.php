@@ -17,15 +17,20 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Blog de Stage</a>
+		      <a href=""><img src="<?php echo Router::webroot('img/Logo.png'); ?>"></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
+			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Cours</a></li>
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Blog</a></li>
 			    	<li><a href="<?php echo Router::url('homes/index'); ?>">Accueil</a></li>
+<<<<<<< HEAD
+			    	<li><a href="<?php echo Router::url('quizzs/index'); ?>">Quizz</a></li>
+=======
 			    	<li><a href="<?php echo Router::url('buttons/index'); ?>">Cours</a></li>
+>>>>>>> 0118204b2f6b8047d6c2dd996731edf9b0917c50
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      	<?php if(!$this->Session->isLogged()){ ?>
