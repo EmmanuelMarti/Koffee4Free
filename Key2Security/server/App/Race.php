@@ -1,4 +1,5 @@
 <?php
+
 /**
  * File Race.php
  *
@@ -12,6 +13,7 @@
  * @version 0.0.1
  */
 namespace Server\App;
+
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
@@ -27,6 +29,7 @@ use Ratchet\ConnectionInterface;
 class Race implements MessageComponentInterface {
     protected $clients;
     protected $games;
+    protected $linksPG;
 
     public function __construct() {
         $this->clients = new \SplObjectStorage;
@@ -37,7 +40,25 @@ class Race implements MessageComponentInterface {
         // Store the new connection to send messages to later
         $this->clients->attach($conn);
 
-        echo "New connection: ({$conn->resourceId}) !\n";
+        $added = false;
+        $g = null;
+        foreach ($this->games as $id => $game) {
+            if( count($game->getPlayers()) < MAXPLAYERS ){
+                $this->linksPG[$conn->resourceId] = $game->getId();
+                $g = $game;
+                $added = true;
+                break;
+            }
+        }
+
+        if( !$added ){
+            $g = new Game();
+            $g->addPlayer($conn);
+            $this->games[$g->getId()] = $g;
+            $this->linksPG[$conn->resourceId] = $g->getId();
+        }
+
+        echo "New connection: ({$conn->resourceId}) in Game '{$g->getId()}' !\n";
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {

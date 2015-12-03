@@ -8,6 +8,8 @@ define('ROOT',dirname(WEBROOT));
 define('DS',DIRECTORY_SEPARATOR);
 define('CORE', ROOT.DS.'core');
 
+define('MAXPLAYERS', 5);
+
 /**
  * Vendor and all things
  */

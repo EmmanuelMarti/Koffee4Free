@@ -12,6 +12,9 @@
  * @since Version 0.0.1
  * @version 0.0.1
  */
+namespace Server\App;
+
+use Ratchet\ConnectionInterface;
 
 /**
  * Manages a games between X players
@@ -25,6 +28,12 @@
 class Game
 {
     /**
+     * The unique id
+     * @var string
+     */
+    protected $id;
+
+    /**
      * The players id connections
      * @var array
      */
@@ -37,10 +46,34 @@ class Game
      * @since Version 0.0.1
      * @version 0.0.1
      */
-    public function __construct($id)
+    public function __construct()
     {
-        $id = keygen(50);
+        $this->id = keygen(50);
         $players = array();
+    }
+
+    /**
+     * Gets the The unique id.
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Sets the The unique id.
+     *
+     * @param string $id the id
+     *
+     * @return self
+     */
+    protected function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -70,13 +103,26 @@ class Game
     /**
      * Attach a player to a game
      *
-     * @param int $connection The connection id
+     * @param ConnectionInterface $conn The connection
      * @return self
      * @since Version 0.0.1
      * @version 0.0.1
      */
-    public function addPlayer($id){
-        $this->players[$id] = $id;
-        return true;
+    public function addPlayer($conn){
+        $this->players[$conn->resourceId] = $conn;
+        return $this;
+    }
+
+    /**
+     * Detach a player to a game
+     *
+     * @param ConnectionInterface $conn The connection
+     * @return self
+     * @since Version 0.0.1
+     * @version 0.0.1
+     */
+    public function removePlayer($conn){
+        unset($this->players[$conn->resourceId]);
+        return $this;
     }
 }

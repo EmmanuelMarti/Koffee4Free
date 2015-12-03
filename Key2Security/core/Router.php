@@ -170,7 +170,7 @@ class Router{
 
 	static function webroot($url){
 		trim($url,'/');
-		return BASE_URL.'/'.$url; 
+		return /*BASE_URL.*/'/'.$url; 
 	}
 
 }

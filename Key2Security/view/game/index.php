@@ -1,5 +1,5 @@
 <div>
-	<h1>Mathieu fait péter le jeu ^^</h1>
+	<h1>Jeu en JS ♥</h1>
 </div>
 <script type="text/javascript">    
     var conn = new WebSocket('ws://<?php echo $wsAddr ?>:8080');
