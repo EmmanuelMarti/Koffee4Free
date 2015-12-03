@@ -24,7 +24,7 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
 			    	<li><a href="<?php echo Router::url('posts/index'); ?>">Blog</a></li>
-			    	<li><a href="#">Rapport</a></li>
+			    	<li><a href="<?php echo Router::url('homes/index'); ?>">Accueil</a></li>
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      	<?php if(!$this->Session->isLogged()){ ?>
@@ -32,6 +32,7 @@
 		      	<?php } else { ?>
 		      		<li><a href="<?php echo Router::url('/users/login'); ?>">Administration</a></li>
 		      		<li><a href="<?php echo Router::url('users/logout'); ?>">Déconnexion</a></li>
+		      		
 		      	<?php } ?>
 			    </ul>
 		    </div><!-- /.navbar-collapse -->
