@@ -2,7 +2,7 @@
 	<h1>Editer un article</h1>
 </div>
 
-<form method="post" action="<?php echo Router::url('admin/posts/edit/'.$id); ?>" class="form-horizontal">
+<form method="catastrophe" action="<?php echo Router::url('admin/catastrophes/edit/'.$id); ?>" class="form-horizontal">
 	<?php echo $this->Form->input('name', 'Titre'); ?>
 	<?php echo $this->Form->input('slug', 'Url'); ?>
 	<?php echo $this->Form->input('id', 'hidden'); ?>

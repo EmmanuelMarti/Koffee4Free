@@ -1,5 +1,5 @@
 <?php
-class Post extends Model {
+class Catastrophe extends Model {
 
 	var $validate = array(
 		'name' => array(

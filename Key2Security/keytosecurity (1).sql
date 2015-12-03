@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `homes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `posts`
+-- Structure de la table `srvoiture`
 --
 
 CREATE TABLE IF NOT EXISTS `posts` (
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `posts`
+-- Contenu de la table `srvoiture`
 --
 
 INSERT INTO `posts` (`id`, `name`, `content`, `created`, `type`, `online`, `slug`) VALUES

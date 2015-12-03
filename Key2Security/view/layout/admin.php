@@ -16,13 +16,13 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="<?php echo Router::url('admin/posts/index'); ?>">Administration</a>
+		      <a class="navbar-brand" href="<?php echo Router::url('admin/srvoiture/index'); ?>">Administration</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
-			   	 	<li><a href="<?php echo Router::url('admin/posts/index'); ?>">Articles</a></li>
+			   	 	<li><a href="<?php echo Router::url('admin/srvoiture/index'); ?>">Articles</a></li>
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      		<li><a href="<?php echo Router::url(); ?>">Retour au site</a></li>
