@@ -8,12 +8,36 @@ var hasAnswered = false;
 var lastAnswer;
 var pause = false;
 var ninja;
+var isExplaining = false;
+var hasExplained = false;
+var explanation;
+var background1;
+var background2;
 var playState = {
 	create: function() {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.world.setBounds(0, 0, 6000, 600);
-		stop = game.add.sprite(800, 0, 'stop');
+		background1 = game.add.sprite(0, 0, 'background');
+		background2 = game.add.sprite(800, 0, 'background');
+		for (i=0; i < 7; ++i) {
+			road = game.add.sprite(0, 0, 'road');
+			road.scale.setTo(0.4, 0.4);
+			road.y = 107;
+			road.x = i * 80;
+		}
+		intersection = game.add.sprite(800, 0, 'intersection');
+		intersection.scale.setTo(0.4, 0.4);
+		intersection.y = 49;
+		intersection.x = 560;
+		stop = game.add.sprite(640, 200, 'stop');
+		for (i=10; i < 24; ++i) {
+			road = game.add.sprite(0, 0, 'road');
+			road.scale.setTo(0.4, 0.4);
+			road.y = 107;
+			road.x = i * 77;
+		}
 		car = game.add.sprite(50, 50, 'car');
+		car.y = 175;
 		answers = loadAnswers();
 		setAllAnswerFrames(frames, answers);
 		car.fixedToCamera = true;
@@ -36,17 +60,50 @@ var playState = {
 		if (!pause) {
 			game.camera.x += 1;
 			if (car.x + car.width > stop.x + stop.width / 2) {
-			//stop.kill();
-			pause = true;
-			if (!hasAnswered || !answers[lastAnswer].correct){
-				game.state.start('lose');
+				//stop.kill();
+				pause = true;
+				if (!hasAnswered || !answers[lastAnswer].correct) {
+					game.state.start('lose');
+				}
 			}
 		} else {
-
+			if (!isExplaining) {
+				cleanAnswerFrames(frames);
+				cleanAnswers(answers_text);
+				question.destroy();	
+				isExplaining = true;
+			}
+			/*console.log('ninja.y');
+			console.log(ninja.y);
+			console.log(ninja.height);*/
+			if (ninja.y < game.world.height - ninja.height) {
+				console.log('on y entre');
+				ninja.fixedToCamera = false;
+				ninja.y += 1;
+			} else if (!hasExplained) {
+				console.log('EXPLAIN');
+				hasExplained = true;
+				explanation = game.add.text(0, 0, "Lorsqu'une voiture arrive à un panneau stop,\nelle doit s'arrêter afin de céder la priorité.",
+					{font: "bold 24px Arial", fill: '#FFF'});
+				explanation.x = Math.round(game.camera.width / 2 - explanation.width / 2);
+				explanation.y = Math.round(game.camera.height / 5 * 3);
+				explanation.fixedToCamera = true;
+			}
+		}
+		if (background1.x + background1.width < 0) {
+			background1.x = 800;
+		}
+		if (background2.x + background2.width < 0) {
+			background2.x = 800;
 		}
 	}
-}
 };
+
+function cleanAnswerFrames(frames) {
+	for (i = 0; i < 3; ++i) {
+		frames[i].destroy();
+	}
+}
 
 function setAnswerText(answers_text, answers, frames) {
 	for (i=0; i < 3; ++i) {
