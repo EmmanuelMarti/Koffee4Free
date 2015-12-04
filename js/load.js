@@ -5,6 +5,7 @@ var loadState = {
 		game.load.image('answerFrame', 'assets/cadre.png');
 		game.load.image('correctFrame', 'assets/cadre_valide.png');
 		game.load.image('wrongFrame', 'assets/cadre_invalide.png');
+		game.load.image('ninja', 'assets/ninja.png');
 		//game.load.image('background', 'assets/background.png');
 	},
 	create: function () {

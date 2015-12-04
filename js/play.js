@@ -6,6 +6,8 @@ var answers;
 var answers_text = [];
 var hasAnswered = false;
 var lastAnswer;
+var pause = false;
+var ninja;
 var playState = {
 	create: function() {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -16,6 +18,11 @@ var playState = {
 		setAllAnswerFrames(frames, answers);
 		car.fixedToCamera = true;
 		game.physics.arcade.enable(car);
+		ninja = game.add.sprite(0, 0, 'ninja');
+		ninja.scale.setTo(0.1, 0.1);
+		ninja.x = 0;
+		ninja.y = 220;
+		ninja.fixedToCamera = true;
 		question = game.add.text(0, 0, 'Que doit faire la voiture au panneau stop ?', {
 			font: "bold 24px Arial", fill: '#FFF'
 		});
@@ -26,14 +33,19 @@ var playState = {
 	},
 
 	update: function() {
-		game.camera.x += 1;
-		if (car.x + car.width > stop.x + stop.width / 2) {
+		if (!pause) {
+			game.camera.x += 1;
+			if (car.x + car.width > stop.x + stop.width / 2) {
 			//stop.kill();
-			if (!hasAnswered){
+			pause = true;
+			if (!hasAnswered || !answers[lastAnswer].correct){
 				game.state.start('lose');
 			}
+		} else {
+
 		}
 	}
+}
 };
 
 function setAnswerText(answers_text, answers, frames) {
