@@ -46,6 +46,7 @@ class Race implements MessageComponentInterface {
             if( count($game->getPlayers()) < MAXPLAYERS ){
                 $this->linksPG[$conn->resourceId] = $game->getId();
                 $g = $game;
+                $g->addPlayer($conn);
                 $added = true;
                 break;
             }
@@ -59,6 +60,7 @@ class Race implements MessageComponentInterface {
         }
 
         echo "New connection: ({$conn->resourceId}) in Game '{$g->getId()}' !\n";
+        echo "The room has " . count($g->getPlayers()) . " players connected.";
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
@@ -74,25 +76,10 @@ class Race implements MessageComponentInterface {
             return;
         }
 
-        $token = new Token( $from->resourceId );
-        if($token->getUser()){
-            $battle = $token->getUser()->getCurrentBattle();
-        }
+        if( $datas[''] ){
 
-        switch ($datas['type']) {
-            case 'combat':
-                break;
-            case 'chat':
-                
-                break;
-            case 'panel':
-                
-                break;
-            case 'register':            
-                //$battle->addPlayer( $token->getUser() );
-                break;
-            default:
-                break;
+        } else if ( $datas[''] ){
+
         }
 
         echo "Recieving new message : $msg from {$from->resourceId}.\n";
@@ -108,6 +95,10 @@ class Race implements MessageComponentInterface {
     public function onClose(ConnectionInterface $conn) {
         // The connection is closed, remove it, as we can no longer send it messages
         $this->clients->detach($conn);
+
+        $idG = $this->linksPG[$conn->resourceId];
+        $this->games[$idG]->removePlayer($conn);
+        unset($this->linksPG[$conn->resourceId]);
 
         echo "Connection {$conn->resourceId} has disconnected\n";
     }
