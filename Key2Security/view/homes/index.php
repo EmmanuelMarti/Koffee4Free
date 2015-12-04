@@ -10,7 +10,7 @@
 	</p>
 
 	<div id="jeu">
-		<a href="<?php echo Router::url('games/index'); ?>">
+		<a href="<?php echo Router::url('game'); ?>">
 			<button type="button" class="btn btn-primary">Jouer le cours</button>
 		</a>
 	</div>

@@ -29,11 +29,10 @@
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      	<?php if(!$this->Session->isLogged()){ ?>
-			        <li><a href="<?php echo Router::url('/users/login'); ?>">Administration</a></li>
+			        <li><a href="<?php echo Router::url('users/login'); ?>">Administration</a></li>
 		      	<?php } else { ?>
-		      		<li><a href="<?php echo Router::url('/users/login'); ?>">Administration</a></li>
+		      		<li><a href="<?php echo Router::url('users/login'); ?>">Administration</a></li>
 		      		<li><a href="<?php echo Router::url('users/logout'); ?>">Déconnexion</a></li>
-		      		
 		      	<?php } ?>
 			    </ul>
 		    </div><!-- /.navbar-collapse -->
