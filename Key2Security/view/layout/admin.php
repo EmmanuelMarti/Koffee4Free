@@ -32,6 +32,7 @@
 					</li>
 					<li><a href="<?php echo Router::url('secourismes/admin_index'); ?>">Secourisme</a></li>
 					<li><a href="<?php echo Router::url('catastrophes/admin_index'); ?>">Catastrophes</a></li>
+					<li><a href="<?php echo Router::url('quizzs/admin_index'); ?>">Quizz</a></li>
 		      	</ul>
 		      	<ul class="nav navbar-nav navbar-right">
 		      		<li><a href="<?php echo Router::url(); ?>">Retour au site</a></li>
