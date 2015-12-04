@@ -15,7 +15,7 @@
 		</a>
 	</div>
 	<div id="cours">
-		<a href="<?php echo Router::url('homes/index'); ?>">
+		<a href="<?php echo Router::url('buttons/index'); ?>">
 			<button type="button" class="btn btn-primary">Lire le cours</button>
 		</a>
 	</div>
