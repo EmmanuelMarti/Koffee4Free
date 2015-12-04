@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/view/srmotos/admin_edit.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srmotos/admin_index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srmotos/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srmotos/view.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srvelos/admin_edit.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srvelos/admin_index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srvelos/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srvelos/view.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/srvoitures/index.php" charset="UTF-8" />
+  </component>
+</project>

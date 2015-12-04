@@ -4,10 +4,10 @@
 	* Classe de routing à utiliser pour un MVC 
 	* Permet de rediriger des URLs vers des URL au format MVC controller/action/param/param/param....
 	* Router::prefix('cockpit','admin');
-	* Router::connect('','posts/index');
-	* Router::connect('cockpit','cockpit/posts/index');
-	* Router::connect('blog/:slug-:id','posts/view/id:([0-9]+)/slug:([a-z0-9\-]+)');
-	* Router::connect('blog/*','posts/*');
+	* Router::connect('','srvoiture/index');
+	* Router::connect('cockpit','cockpit/srvoiture/index');
+	* Router::connect('blog/:slug-:id','srvoiture/view/id:([0-9]+)/slug:([a-z0-9\-]+)');
+	* Router::connect('blog/*','srvoiture/*');
 	*
 	**/
 

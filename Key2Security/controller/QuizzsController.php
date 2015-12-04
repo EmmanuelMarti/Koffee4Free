@@ -14,6 +14,10 @@ class QuizzsController extends Controller{
 		$d['page'] = ceil($d['total'] / $perPage);
 		$this->set($d);
 	}
+
+		function answer(){
+			
+		}
 	
 }
 

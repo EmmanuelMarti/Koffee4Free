@@ -13,7 +13,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($posts as $k=>$v): ?>
+			<?php foreach ($srvelos as $k=>$v): ?>
 			<tr>
 				<td><?php echo $v->id; ?></td>
 				<td>
@@ -21,8 +21,8 @@
 				</td>
 				<td><?php echo $v->name; ?></td>
 				<td>
-					<a href="<?php echo Router::url('admin/posts/edit/'.$v->id); ?>">Editer</a>
-					<a onclick="return confirm('Voulez vous vraiment supprimer ce contenu');" href="<?php echo Router::url('admin/posts/delete/'.$v->id); ?>">Supprimer</a>
+					<a href="<?php echo Router::url('admin/srvelos/edit/'.$v->id); ?>">Editer</a>
+					<a onclick="return confirm('Voulez vous vraiment supprimer ce contenu');" href="<?php echo Router::url('admin/srvelos/delete/'.$v->id); ?>">Supprimer</a>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -30,4 +30,4 @@
 	</table>
 </div>
 
-<a href="<?php echo Router::url('admin/posts/edit'); ?>" class="btn btn-primary" role="button">Ajouter un article</a>
+<a href="<?php echo Router::url('admin/srvelos/edit'); ?>" class="btn btn-primary" role="button">Ajouter un article</a>

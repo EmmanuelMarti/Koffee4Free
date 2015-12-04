@@ -1,14 +1,14 @@
-<?php $title_for_layout = $post->name; ?>
+<?php $title_for_layout = $srmoto->name; ?>
 
 <div class="page-header">
-	<h1><?php echo $post->name; ?></h1>
+	<h1><?php echo $srmoto->name; ?></h1>
 </div>
 
-<?php echo $post->content; ?>
+<?php echo $srmoto->content; ?>
 
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="KeyToSecurity">Tweet</a>
-<a name="fb_share" type="button" share_url="<?php echo Router::url("posts/view/id:{$post->id}/slug:$post->slug"); ?>"></a>
-<div class="fb-like" data-href="<?php echo Router::url("posts/view/id:{$post->id}/slug:$post->slug"); ?>" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+<a name="fb_share" type="button" share_url="<?php echo Router::url("srmotos/view/id:{$srmoto->id}/slug:$srmoto->slug"); ?>"></a>
+<div class="fb-like" data-href="<?php echo Router::url("srmotos/view/id:{$srmoto->id}/slug:$srmoto->slug"); ?>" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
 <iframe name="frame1" width="1" height="1" align="middle" src="http://bouton-facebook.over-blog.com/2014/06/zz.html" frameborder="no" scrolling="no"></iframe>
 
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

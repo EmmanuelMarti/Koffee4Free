@@ -1,14 +1,14 @@
 <div class="page-header">
-	<h1>Blog de Stage - Morgane MINODIER</h1>
+	<h1>Securité Routière - Voiture</h1>
 </div>
 
 <div class="blog">
-<?php foreach($posts as $k => $v): ?>
+<?php foreach($srvoitures as $k => $v): ?>
 
 	<h2><?php echo $v->name; ?></h2>
 
 	<div class="article"><?php echo $v->content; ?></div>
-	<p><a href="<?php echo Router::url("posts/view/id:{$v->id}/slug:$v->slug"); ?>" title="<?php echo $v->name; ?>">Lire la suite &rarr;</a></p>
+	<p><a href="<?php echo Router::url("srvoitures/view/id:{$v->id}/slug:$v->slug"); ?>" title="<?php echo $v->name; ?>">Lire la suite &rarr;</a></p>
 
 <?php endforeach; ?>
 

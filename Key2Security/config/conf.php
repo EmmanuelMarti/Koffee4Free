@@ -18,8 +18,8 @@ class Conf{
 
 Router::prefix('cockpit', 'admin');
 
-Router::connect('', 'posts/index');
-Router::connect('cockpit', 'cockpit/posts/index');
-Router::connect('blog/:slug-:id', 'posts/view/id:([0-9]+)/slug:([a-z0-9\-]+)');
-Router::connect('blog/*', 'posts/*');
+Router::connect('', 'homes/index');
+Router::connect('cockpit', 'cockpit/srvoitures/index');
+Router::connect('blog/:slug-:id', 'srvoitures/view/id:([0-9]+)/slug:([a-z0-9\-]+)');
+Router::connect('blog/*', 'srvoitures/*');
 Router::connect('game', 'game/index');
