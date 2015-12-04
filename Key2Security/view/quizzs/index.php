@@ -14,3 +14,7 @@
 		<input type="submit" value="Envoyer" id="quizz" />
 	</form>
 </div>
+
+<div class="mascotte">
+	<img id="accueil" src="<?php echo Router::webroot('img/Mascotte-discu-quizz.png'); ?>">
+</div>

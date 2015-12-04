@@ -20,3 +20,7 @@
 		</a>
 	</div>
 </div>
+
+<div class="mascotte">
+	<img id="accueil" src="<?php echo Router::webroot('img/Mascotte-discu.png'); ?>">
+</div>

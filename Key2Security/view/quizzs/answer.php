@@ -10,3 +10,7 @@ foreach($quizzs as $k => $v){ ?>
 }
 
 ?>
+
+<div class="mascotte">
+	<img id="accueil" src="<?php echo Router::webroot('img/Mascotte-discu-quizz.png'); ?>">
+</div>

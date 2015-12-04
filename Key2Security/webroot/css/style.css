@@ -29,3 +29,10 @@ body{
 	text-align: center;
 	padding: 10px;
 }
+
+.mascotte{
+	position: fixed;
+	float: left;
+	left: 0;
+	bottom: 0;
+}
