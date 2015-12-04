@@ -1,8 +1,8 @@
 <div class="page-header">
-	<h1>Editer un article</h1>
+	<h1>Editer un cours</h1>
 </div>
 
-<form method="srvelo" action="<?php echo Router::url('admin/srvelos/edit/'.$id); ?>" class="form-horizontal">
+<form method="post" action="<?php echo Router::url('admin/srvelos/edit/'.$id); ?>" class="form-horizontal">
 	<?php echo $this->Form->input('name', 'Titre'); ?>
 	<?php echo $this->Form->input('slug', 'Url'); ?>
 	<?php echo $this->Form->input('id', 'hidden'); ?>

@@ -47,3 +47,7 @@
 <div class="button-cours" id="menu3-3" >
   <button type="button" class="btn btn-primary">Middle3</button>
 </div>
+
+<div class="mascotte">
+    <img src="<?php echo Router::webroot('img/Mascotte-discu-cours.png'); ?>">
+  </div>
