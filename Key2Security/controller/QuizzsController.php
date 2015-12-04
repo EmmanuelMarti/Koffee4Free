@@ -1,7 +1,7 @@
 <?php 
 
 class QuizzsController extends Controller{
-		function index(){
+	function index(){
 
 		$perPage = 3; 
 		$this->loadModel('Quizz');
@@ -15,11 +15,21 @@ class QuizzsController extends Controller{
 		$this->set($d);
 	}
 
-		function answer(){
+	function answer(){
 			
-		}
-	
+	}
+
+	/**
+	 * Get X number of quizzs
+	 *
+	 * @param int $n The number of quizzs to get
+	 * @return string
+	 * @since Version 0.0.1
+	 * @version 0.0.1
+	 */
+	public function getRand($n = 6){
+		$this->loadModel('Quizz');
+		$d['quizzs'] = $this->Quizz->findAll('RAND()', '0,' . $n);
+		return json_encode($d, true);
+	}
 }
-
-
-?>

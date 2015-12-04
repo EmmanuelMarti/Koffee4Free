@@ -1,8 +1,18 @@
 <div>
 	<h1>Jeu en JS ♥</h1>
 </div>
-<script type="text/javascript">    
-    var conn = new WebSocket('ws://<?php echo $wsAddr ?>:8080');
+<script type="text/javascript">
+    window.onload = function(){
+        $.ajax({
+            url:'http://n2i2015.dev/ajax/getRandQuizz.php', 
+            method: 'GET',
+            dataType: 'json',
+            success: function(json){ 
+                console.log(json)
+            }
+        });   
+    }
+    /*var conn = new WebSocket('ws://<?php echo $wsAddr ?>:8080');
     conn.onopen = function(e) {
 
     };
@@ -35,5 +45,5 @@
         } else if( res.type == 'panel' ){
             battle.registerPlayers( res.players );
         }
-    };
+    };*/
 </script>

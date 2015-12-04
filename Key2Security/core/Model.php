@@ -44,6 +44,22 @@ class Model{
 		
 	}
 
+	public function findAll($order = null, $limit = null){
+		$sql = 'SELECT * FROM ' . $this->table;
+
+		if( is_string($order) ){
+			$sql .= ' ORDER BY ' . $order;
+		}
+
+		if( is_string($limit) ){
+			$sql .= ' LIMIT ' . $limit;
+		}
+
+		$pre = $this->db->prepare($sql);
+		$pre->execute();
+		return $pre->fetchAll(PDO::FETCH_OBJ);	
+	}
+
 	public function find($req){
 
 		$sql = 'SELECT ';
@@ -163,6 +179,4 @@ class Model{
 		}
 		return false;
 	}
-
-	function 
 }

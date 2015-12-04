@@ -4,6 +4,7 @@ require 'Session.php';
 require 'Form.php';
 require 'functions.php';
 require 'Router.php';
+require_once 'Database.class.php';
 
 require ROOT.DS.'config'.DS.'conf.php';
 
