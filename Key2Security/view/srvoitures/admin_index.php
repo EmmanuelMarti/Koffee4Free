@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1><?php echo $total; ?> Articles</h1>
+	<h1><?php echo $total; ?> Cours "Voiture"</h1>
 </div>
 
 <div class="table-responsive">

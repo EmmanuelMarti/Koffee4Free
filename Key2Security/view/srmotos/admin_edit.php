@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>Editer un article</h1>
+	<h1>Editer un cours</h1>
 </div>
 
 <form method="srmoto" action="<?php echo Router::url('admin/srmotos/edit/'.$id); ?>" class="form-horizontal">
@@ -22,6 +22,7 @@
 	var editor = CKEDITOR.replace( 'content', {
 		filebrowserBrowseUrl: '<?php echo Router::url('admin/medias/index/'.$id); ?>',
 		filebrowserWindowWidth: '800',
-    	filebrowserWindowHeight: '550'
+    	filebrowserWindowHeight: '550',
+    	config.toolbar = [{ name: 'insert', items: ['Image', 'Youtube']}];
 	});
 </script>

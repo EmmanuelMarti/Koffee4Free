@@ -1,13 +1,12 @@
 <?php
-foreach($quizzs as $k => $v): ?>
+foreach($quizzs as $k => $v){ ?>
 		<div class="panel-body">
 			<?php $reponse = json_decode($v->answers, true);
-				foreach ($reponse as $key => $r) {
-					if($v->correct == $key){
-						echo "<div>Correct</div>";
-					}else{
-						echo "<div>"
-					}
-		}
+				if($v->correct == $_POST['reponse_'.$v->id]){
+					echo "<div>Félicitations, vous avez trouvé la bonne reponse ! =)</div>";
+				}else{
+					echo "<div> Vous avez mal répondu la bonne réponse était ".$reponse[$v->correct]['text']." car ".$reponse[$v->id]['correction'];
+				}
+}
 
 ?>
