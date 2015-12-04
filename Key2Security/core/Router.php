@@ -75,7 +75,6 @@ class Router{
 		}
 		$request->params = array_slice($params,2);
 		return true;
-
 	}
 
 	/**
@@ -164,13 +163,13 @@ class Router{
 				$url = str_replace($v, $k, $url);
 			}
 		}
-		return BASE_URL.'/'.$url;
+		return /*BASE_URL.*/'/'.$url;
 
 	}
 
 	static function webroot($url){
 		trim($url,'/');
-		return BASE_URL.'/'.$url; 
+		return /*BASE_URL.*/'/'.$url; 
 	}
 
 }

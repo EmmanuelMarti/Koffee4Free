@@ -18,7 +18,7 @@ class Controller{
 	}
 	
 	public function render($view){
-		
+
 		if($this->rendered){ return false; }
 		extract($this->vars);
 		if(strpos($view,'/')===0) {
